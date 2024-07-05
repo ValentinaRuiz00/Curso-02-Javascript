@@ -29,3 +29,25 @@ frutas.forEach((fruta, index, array) => {
     console.log(array)
 })
 
+//Objetos
+
+const gato = {
+    //Propiedades
+    nombre: "Federico",
+    duerme: true,
+    edad: 1,
+    enemigos:["agua","perros"]
+};
+
+console.log(gato["nombre"]);
+console.log(gato.duerme);
+
+//CRUD
+//Añadir
+gato.color = "Beige";
+//Editar
+gato.edad = 1.5;
+//Eliminar
+delete gato.duerme;
+//Leer
+console.log(gato);
