@@ -31,23 +31,63 @@ frutas.forEach((fruta, index, array) => {
 
 //Objetos
 
+// const gato = {
+//     //Propiedades
+//     nombre: "Federico",
+//     duerme: true,
+//     edad: 1,
+//     enemigos:["agua","perros"]
+// };
+
+// console.log(gato["nombre"]);
+// console.log(gato.duerme);
+
+// //CRUD
+// //Añadir
+// gato.color = "Beige";
+// //Editar
+// gato.edad = 1.5;
+// //Eliminar
+// delete gato.duerme;
+// //Leer
+// console.log(gato);
+
+//hasOwnProperty
+// console.log(gato.hasOwnProperty("nombre"))
+// console.log(gato.hasOwnProperty("salud"))
+
+//Objetos anidados
+// const gato = {
+//     nombre: 'Valiente',
+//     duerme: true,
+//     edad: 10,
+//     enemigos: ["agua", "perros"],
+//     otros: {
+//         amigos: ["Cobarde", "Tímido", "Pegajoso"],
+//         favoritos: {
+//             comida: {
+//                 fria: "salmón",
+//                 caliente: "pollo"
+//             }
+//         }
+//     }
+// }
+
+// console.log(gato.otros.favoritos.comida.caliente)
+
+//Metodos-funciones
 const gato = {
-    //Propiedades
-    nombre: "Federico",
+    nombre: 'Valiente',
     duerme: true,
-    edad: 1,
-    enemigos:["agua","perros"]
+    edad: 10,
+    enemigos: ["agua", "perros"],
+    comer: function(){
+        console.log('gato comiendo')
+    },
+    comerDos(alimento){
+        console.log('Gato comiendo dos: '+alimento)
+    }
 };
 
-console.log(gato["nombre"]);
-console.log(gato.duerme);
-
-//CRUD
-//Añadir
-gato.color = "Beige";
-//Editar
-gato.edad = 1.5;
-//Eliminar
-delete gato.duerme;
-//Leer
-console.log(gato);
+gato.comer()
+gato.comerDos("Pescado");
