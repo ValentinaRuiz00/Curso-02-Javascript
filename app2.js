@@ -75,22 +75,42 @@ frutas.forEach((fruta, index, array) => {
 
 // console.log(gato.otros.favoritos.comida.caliente)
 
-//Metodos-funciones
+//Metodos-funciones-this
+// const gato = {
+//     nombre: 'Valiente',
+//     duerme: true,
+//     edad: 10,
+//     enemigos: ["agua", "perros"],
+//     comer: function(){
+//         console.log('gato comiendo')
+//     },
+//     comerDos(alimento){
+//         return `${this.nombre} está comiendo ${alimento}`;
+//     },
+//     mostrarEnemigos() {
+//         return this.enemigos.forEach((item) => console.log(item));
+//     },
+// };
+
+// gato.comer()
+// gato.comerDos("Pescado");
+
+//Recorrer con for in
 const gato = {
-    nombre: 'Valiente',
+    nombre: "Valiente",
     duerme: true,
     edad: 10,
     enemigos: ["agua", "perros"],
-    comer: function(){
-        console.log('gato comiendo')
-    },
-    comerDos(alimento){
-        return `${this.nombre} está comiendo ${alimento}`;
-    },
-    mostrarEnemigos() {
-        return this.enemigos.forEach((item) => console.log(item));
-    },
 };
 
-gato.comer()
-gato.comerDos("Pescado");
+for (const propiedad in gato) {
+    console.log(gato[propiedad]);
+}
+
+//Object Values 
+console.log(Object.values(gato));
+//Object Values con Foreach
+Object.values(gato).forEach((item) => console.log(item));
+
+
+
