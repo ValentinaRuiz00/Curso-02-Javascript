@@ -96,21 +96,88 @@ frutas.forEach((fruta, index, array) => {
 // gato.comerDos("Pescado");
 
 //Recorrer con for in
+// const gato = {
+//     nombre: "Valiente",
+//     duerme: true,
+//     edad: 10,
+//     enemigos: ["agua", "perros"],
+// };
+
+// for (const propiedad in gato) {
+//     console.log(gato[propiedad]);
+// }
+
+// //Object Values 
+// console.log(Object.values(gato));
+// //Object Values con Foreach
+// Object.values(gato).forEach((item) => console.log(item));
+
+//Destructuring de Obejtos
+// const gato = {
+//     nombre: "Valiente",
+//     duerme: true,
+//     edad: 10,
+//     enemigos: ["agua", "perros"],
+//     otros: {
+//         amigos: ["Cobarde", "Tímido", "Pegajoso"],
+//         favoritos: {
+//             comida: {
+//                 fria: "salmón",
+//                 caliente: "pollo",
+//             },
+//         },
+//     },
+// };
+
+// const { nombre, duerme, edad, enemigos } = gato;
+// console.log(nombre);
+// console.log(duerme);
+// console.log(edad);
+// console.log(enemigos);
+
+
+//Destructuring de Objetos por Defecto
+// const gato = {
+//     // nombre: "Valiente",
+//     duerme: true,
+//     edad: 10,
+//     enemigos: ["agua", "perros"],
+//     otros: {
+//         amigos: ["Cobarde", "Tímido", "Pegajoso"],
+//         favoritos: {
+//             comida: {
+//                 fria: "salmón",
+//                 caliente: "pollo",
+//             },
+//         },
+//     },
+// };
+
+// const { nombre: nombreGato = "Sin nombre" } = gato;
+// console.log(nombreGato);
+
+
+//Destructuring de Objetos Anidados
 const gato = {
     nombre: "Valiente",
     duerme: true,
     edad: 10,
     enemigos: ["agua", "perros"],
+    otros: {
+        amigos: ["Cobarde", "Tímido", "Pegajoso"],
+        favoritos: {
+            comida: {
+                fria: "salmón",
+                caliente: "pollo",
+            },
+        },
+    },
 };
 
-for (const propiedad in gato) {
-    console.log(gato[propiedad]);
-}
-
-//Object Values 
-console.log(Object.values(gato));
-//Object Values con Foreach
-Object.values(gato).forEach((item) => console.log(item));
+const {
+    otros: { amigos },
+} = gato;
+console.log(amigos);
 
 
 
