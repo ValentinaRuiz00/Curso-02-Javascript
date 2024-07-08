@@ -158,26 +158,50 @@ frutas.forEach((fruta, index, array) => {
 
 
 //Destructuring de Objetos Anidados
+// const gato = {
+//     nombre: "Valiente",
+//     duerme: true,
+//     edad: 10,
+//     enemigos: ["agua", "perros"],
+//     otros: {
+//         amigos: ["Cobarde", "Tímido", "Pegajoso"],
+//         favoritos: {
+//             comida: {
+//                 fria: "salmón",
+//                 caliente: "pollo",
+//             },
+//         },
+//     },
+// };
+
+// const {
+//     otros: { amigos },
+// } = gato;
+// console.log(amigos);
+
+//Getter y Setter
 const gato = {
     nombre: "Valiente",
     duerme: true,
     edad: 10,
     enemigos: ["agua", "perros"],
-    otros: {
-        amigos: ["Cobarde", "Tímido", "Pegajoso"],
-        favoritos: {
-            comida: {
-                fria: "salmón",
-                caliente: "pollo",
-            },
-        },
+    comer(comida) {
+        return `${this.nombre} está comiendo ${comida}`;
+    },
+    get nombreMayuscula() {
+        return this.nombre.toUpperCase();
+    },
+    set nuevoEnemigo(nuevo) {
+        this.enemigos.push(nuevo);
     },
 };
 
-const {
-    otros: { amigos },
-} = gato;
-console.log(amigos);
+// GET
+console.log(gato.nombreMayuscula);
+
+// SET
+gato.nuevoEnemigo = "batman";
+console.log(gato.enemigos);
 
 
 
