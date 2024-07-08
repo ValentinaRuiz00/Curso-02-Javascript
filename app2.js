@@ -85,8 +85,11 @@ const gato = {
         console.log('gato comiendo')
     },
     comerDos(alimento){
-        console.log('Gato comiendo dos: '+alimento)
-    }
+        return `${this.nombre} está comiendo ${alimento}`;
+    },
+    mostrarEnemigos() {
+        return this.enemigos.forEach((item) => console.log(item));
+    },
 };
 
 gato.comer()
