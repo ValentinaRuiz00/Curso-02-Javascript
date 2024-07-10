@@ -98,16 +98,33 @@ const cardColor = document.querySelector('#cardColor');
 // lista.appendChild(fragment);
 
 //Practica de Create Element mas corto
+// const arrayElementos = ["Perú", "Bolivia", "Colombia"];
+// let template = "";
+
+// arrayElementos.forEach((pais) => {
+//     template += `
+//     <li class="list">
+//         <b>País: </b> <span class="text-primary">${pais}</span>
+//     </li>
+//     `;
+// });
+
+// lista.innerHTML = template;
+
+//Template
+const lista = document.querySelector("#lista");
+const fragment = document.createDocumentFragment();
+
 const arrayElementos = ["Perú", "Bolivia", "Colombia"];
-let template = "";
 
-arrayElementos.forEach((pais) => {
-    template += `
-    <li class="list">
-        <b>País: </b> <span class="text-primary">${pais}</span>
-    </li>
-    `;
-});
+const liTemplate = document.querySelector("#liTemplate");
 
-lista.innerHTML = template;
+const clickPais = (e) => e.target.append(" click");
 
+arrayElementos.forEach(pais=>{
+    const clone = liTemplate.content.cloneNode(true);
+    clone.querySelector('span').textContent = pais
+    clone.addEventListener("click", clickPais);
+    fragment.appendChild(clone);
+})
+lista.appendChild(fragment);
