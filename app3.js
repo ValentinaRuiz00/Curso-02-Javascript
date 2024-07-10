@@ -17,10 +17,60 @@ const parrafoExa = document.querySelector('#parrafoExa');
 const cardColor = document.querySelector('#cardColor');
 
 //addEventListener
-console.log(inputColor.value);
-btnVisualizar.addEventListener("click",()=>{
-    console.log('Me diste click')
-    console.log(inputColor.value);
-    parrafoExa.textContent = inputColor.value;
-    cardColor.style.backgroundColor = inputColor.value;
-})
+// console.log(inputColor.value);
+// btnVisualizar.addEventListener("click",()=>{
+//     console.log('Me diste click')
+//     console.log(inputColor.value);
+//     parrafoExa.textContent = inputColor.value;
+//     cardColor.style.backgroundColor = inputColor.value;
+// })
+
+
+//Create Element
+const lista = document.querySelector("#lista");
+const li = document.createElement('li');
+li.textContent = "Elemento desde js";
+console.log(li);
+
+//AppendChild (PUEDE GENERAR REFLOW)
+lista.appendChild(li);
+
+const arrayPaises =["Peru","Bolivia","Chile"]
+
+// arrayPaises.forEach((pais)=>{
+//     const li = document.createElement("li");
+//     li.textContent = "Elemento desde js";
+//     li.textContent = pais;
+//     lista.appendChild(li);
+// })  
+
+
+//InnerHTML (PUEDE GENERAR REFLOW)
+// arrayPaises.forEach((pais)=>{
+//     lista.innerHTML += `<li>${pais}</li>`;
+// }) 
+
+//Fragment (NO GENERA REFLOW)
+//const fragment = document.createDocumentFragment();
+
+// arrayPaises.forEach((pais)=>{
+//     const li = document.createElement("li");
+//     li.textContent = pais;
+//     fragment.appendChild(li);
+// })  
+
+// lista.appendChild(fragment);
+
+//InsertBefore
+// const fragment = document.createDocumentFragment();
+
+// arrayPaises.forEach((pais)=>{
+//     const newNode = document.createElement("li");
+//     newNode.textContent = pais;
+//     const referenceNode = fragment.firstChild;
+//     fragment.insertBefore(newNode,referenceNode);
+// })  
+
+// lista.appendChild(fragment);
+
+
