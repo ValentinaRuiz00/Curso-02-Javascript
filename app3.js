@@ -27,15 +27,15 @@ const cardColor = document.querySelector('#cardColor');
 
 
 //Create Element
-const lista = document.querySelector("#lista");
-const li = document.createElement('li');
-li.textContent = "Elemento desde js";
-console.log(li);
+// const lista = document.querySelector("#lista");
+// const li = document.createElement('li');
+// li.textContent = "Elemento desde js";
+// console.log(li);
 
 //AppendChild (PUEDE GENERAR REFLOW)
-lista.appendChild(li);
+// lista.appendChild(li);
 
-const arrayPaises =["Peru","Bolivia","Chile"]
+// const arrayPaises =["Peru","Bolivia","Chile"]
 
 // arrayPaises.forEach((pais)=>{
 //     const li = document.createElement("li");
@@ -73,4 +73,41 @@ const arrayPaises =["Peru","Bolivia","Chile"]
 
 // lista.appendChild(fragment);
 
+
+//Practica Create Element
+// const lista = document.querySelector("#lista");
+// const arrayElementos = ["Perú", "Bolivia", "Colombia"];
+// const fragment = new DocumentFragment();
+
+//arrayElementos.forEach((pais) => {
+//     const li = document.createElement("li");
+//     li.className = "list";
+
+//     const bold = document.createElement("b");
+//     bold.textContent = "País: ";
+
+//     const span = document.createElement("span");
+//     span.className = "text-primary";
+//     span.textContent = pais;
+
+//     li.appendChild(bold);
+//     li.appendChild(span);
+//     fragment.appendChild(li);
+// });
+
+// lista.appendChild(fragment);
+
+//Practica de Create Element mas corto
+const arrayElementos = ["Perú", "Bolivia", "Colombia"];
+let template = "";
+
+arrayElementos.forEach((pais) => {
+    template += `
+    <li class="list">
+        <b>País: </b> <span class="text-primary">${pais}</span>
+    </li>
+    `;
+});
+
+lista.innerHTML = template;
 
