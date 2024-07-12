@@ -53,9 +53,9 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Burbujeo y captura
-const padre = document.querySelector(".border-primary");
-const hijo = document.querySelector(".border-secondary");
-const nieto = document.querySelector(".border-danger");
+// const padre = document.querySelector(".border-primary");
+// const hijo = document.querySelector(".border-secondary");
+// const nieto = document.querySelector(".border-danger");
 
 // padre.addEventListener('click',()=>{
 //     console.log("Me diste click")
@@ -67,11 +67,21 @@ const nieto = document.querySelector(".border-danger");
 //     console.log("Me diste click")
 // });
 
-const cajas = document.querySelectorAll(".border");
+// const cajas = document.querySelectorAll(".border");
 
-cajas.forEach((caja)=>{
-    caja.addEventListener('click',(e)=>{
-        e.stopPropagation();
-        console.log("Me diste click");
-    });
+// cajas.forEach((caja)=>{
+//     caja.addEventListener('click',(e)=>{
+//         e.stopPropagation();
+//         console.log("Me diste click");
+//     });
+// });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//PreventDefault
+const formulario = document.querySelector('form');
+
+formulario.addEventListener('submit',(e)=>{
+    console.log('Me diste click');
+    e.preventDefault();
 });
