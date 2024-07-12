@@ -79,9 +79,34 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //PreventDefault
-const formulario = document.querySelector('form');
+// const formulario = document.querySelector('form');
 
-formulario.addEventListener('submit',(e)=>{
-    console.log('Me diste click');
-    e.preventDefault();
+// formulario.addEventListener('submit',(e)=>{
+//     console.log('Me diste click');
+//     e.preventDefault();
+// });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Delegacion de Eventos
+
+const container = document.querySelector('.container');
+
+container.addEventListener('click',(e)=>{
+    // console.log(e.target.id);
+
+    if(e.target.id === "padre"){
+        console.log("Diste click al padre")
+    }
+
+    // console.log(e.target.matches(".border-secondary"));
+
+    if(e.target.matches(".border-secondary")){
+        console.log("Diste click al hijo")
+    }
+
+
+    if(e.target.dataset.div === "divNieto"){
+        console.log("Diste click al nieto")
+    }
 });
